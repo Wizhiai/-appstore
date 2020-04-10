@@ -11,6 +11,7 @@
 		196A31832B50947DB74B78DEAA387CAE /* Pods-YQImageToolDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C884AE344C2E58853756B06622FFD /* Pods-YQImageToolDemo-dummy.m */; };
 		5B25EB06BFA6465C04FFA97631ACC01C /* YQImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342644B62D15B481659B37E5CE7EE21 /* YQImageTool.m */; };
 		7643A9310AF3A10C92DACBFF200B89B2 /* YQImageTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A40C8FAA5DBF93C694C7CFDE021A7B /* YQImageTool-dummy.m */; };
+		77706AB22440738C008EA98E /* NSString+StringSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 77706AB12440738C008EA98E /* NSString+StringSize.m */; };
 		9F66CCFA2504BE779359FE356B74859B /* YQImageCompressTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 020BA71019B6CC321C25C03C47CCE9F9 /* YQImageCompressTool.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BE89DC7B49B37E4214F72FD29633D031 /* YQImageCompressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E241261943F5C89B6C86568AB4720C0 /* YQImageCompressTool.m */; };
 		C294FBDB2372E13F83B7359DB79DE37A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD46FBC041420035C341CC6342582587 /* UIKit.framework */; };
@@ -44,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		020BA71019B6CC321C25C03C47CCE9F9 /* YQImageCompressTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YQImageCompressTool.h; sourceTree = "<group>"; };
-		08216012096C401191BBCFD9713B78CF /* libPods-YQImageToolDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YQImageToolDemoTests.a"; path = "libPods-YQImageToolDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08216012096C401191BBCFD9713B78CF /* libPods-YQImageToolDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YQImageToolDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A9DEF529806D4DCA11576E655A30D9 /* Pods-YQImageToolDemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQImageToolDemoTests-frameworks.sh"; sourceTree = "<group>"; };
 		1B5948F0F5148A4F1344E632FE7F46FB /* Pods-YQImageToolDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQImageToolDemo-frameworks.sh"; sourceTree = "<group>"; };
 		2D33D5AC281AEF655B026D3D404BDF47 /* Pods-YQImageToolDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,25 +55,27 @@
 		50E37AD76763605ADF7B1A6D5BCFF307 /* Pods-YQImageToolDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQImageToolDemo-resources.sh"; sourceTree = "<group>"; };
 		50FCFF33D581FBE6A55489A712BE0C1D /* Pods-YQImageToolDemoUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQImageToolDemoUITests-resources.sh"; sourceTree = "<group>"; };
 		57A40C8FAA5DBF93C694C7CFDE021A7B /* YQImageTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YQImageTool-dummy.m"; sourceTree = "<group>"; };
-		69DB997F7F2C1461095AB059771A181A /* YQImageTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = YQImageTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		69DB997F7F2C1461095AB059771A181A /* YQImageTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = YQImageTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7037814A033D9E9C5455315BC95379FE /* Pods-YQImageToolDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YQImageToolDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		72F78CA65599454375326D60F9327925 /* YQImageTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YQImageTool-prefix.pch"; sourceTree = "<group>"; };
 		7342644B62D15B481659B37E5CE7EE21 /* YQImageTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YQImageTool.m; path = YQImageTool/YQImageTool.m; sourceTree = "<group>"; };
+		77706AB02440738C008EA98E /* NSString+StringSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringSize.h"; sourceTree = "<group>"; };
+		77706AB12440738C008EA98E /* NSString+StringSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringSize.m"; sourceTree = "<group>"; };
 		7823A86CADDF3CF00C74B664B726E176 /* Pods-YQImageToolDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YQImageToolDemoTests-dummy.m"; sourceTree = "<group>"; };
 		91B75694CEFD9C6C7EDD7F2B246DB45A /* Pods-YQImageToolDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F9AD060E744F2A7671A531EE8B19339 /* libYQImageTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYQImageTool.a; path = libYQImageTool.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1E0910D7498E9DB641C14C8D7E54EE9 /* license */ = {isa = PBXFileReference; includeInIndex = 1; path = license; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F9AD060E744F2A7671A531EE8B19339 /* libYQImageTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYQImageTool.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E0910D7498E9DB641C14C8D7E54EE9 /* license */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = license; sourceTree = "<group>"; };
 		A3B7EB8F8F1065846E1006EF3D5113F5 /* Pods-YQImageToolDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YQImageToolDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A4EF110A630D69D405F4FD7B12EB5DEB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A4EF110A630D69D405F4FD7B12EB5DEB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA10F08EDE06424AD61816CA1619FA2F /* Pods-YQImageToolDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YQImageToolDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AD2032E673F876DB1C769F8E90B9C07A /* Pods-YQImageToolDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YQImageToolDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF2C884AE344C2E58853756B06622FFD /* Pods-YQImageToolDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YQImageToolDemo-dummy.m"; sourceTree = "<group>"; };
 		B4BE28F43EE2763759D5297920587C54 /* Pods-YQImageToolDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7090C7EDEDFFF175835F1E3B65ECFF3 /* Pods-YQImageToolDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF1D649B914C8503B82FF1D7D3723A9B /* Pods-YQImageToolDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YQImageToolDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D5D22B672EC906DFC94F01BC895FD85B /* libPods-YQImageToolDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YQImageToolDemo.a"; path = "libPods-YQImageToolDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8679934551CF6C6658409127FF7FE35 /* libPods-YQImageToolDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YQImageToolDemoUITests.a"; path = "libPods-YQImageToolDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D22B672EC906DFC94F01BC895FD85B /* libPods-YQImageToolDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YQImageToolDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8679934551CF6C6658409127FF7FE35 /* libPods-YQImageToolDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YQImageToolDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1C6677B5A888B2BE41C7C4842F6078 /* Pods-YQImageToolDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD46FBC041420035C341CC6342582587 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E5F07851CA0B55BC29403A91D3DE2502 /* Pods-YQImageToolDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQImageToolDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 		1224DAAA81CF94ABE64DBEE09035F82A /* YQImageTool */ = {
 			isa = PBXGroup;
 			children = (
+				77706AB02440738C008EA98E /* NSString+StringSize.h */,
+				77706AB12440738C008EA98E /* NSString+StringSize.m */,
 				E8F00C28BFC62A8BD368251D86C0400F /* YQImageTool.h */,
 				7342644B62D15B481659B37E5CE7EE21 /* YQImageTool.m */,
 				D58EF0073E115B578674F4E26D8F0AFE /* Pod */,
@@ -357,6 +362,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -394,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				196A31832B50947DB74B78DEAA387CAE /* Pods-YQImageToolDemo-dummy.m in Sources */,
+				77706AB22440738C008EA98E /* NSString+StringSize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

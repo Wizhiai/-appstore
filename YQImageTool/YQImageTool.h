@@ -87,11 +87,29 @@
  *
  *  @return 新生成的图片
  */
+
+
+
++ (UIImage *)GetWaterPrintedImageWithBackImageIphone11:(UIImage *)backImage
+                                 andWaterImage:(UIImage *)waterImage
+                                        inRect:(CGRect)waterRect
+                                         alpha:(CGFloat)alpha
+                                    waterScale:(BOOL)waterScale;
 + (UIImage *)GetWaterPrintedImageWithBackImage:(UIImage *)backImage
                                  andWaterImage:(UIImage *)waterImage
                                         inRect:(CGRect)waterRect
                                          alpha:(CGFloat)alpha
                                     waterScale:(BOOL)waterScale;
+
++ (UIImage *)GetWaterPrintedImageWithBackImageIphone11Pro:(UIImage *)backImage
+andWaterImage:(UIImage *)waterImage
+       inRect:(CGRect)waterRect
+        alpha:(CGFloat)alpha
+   waterScale:(BOOL)waterScale;
+
++ (UIImage *)GetWaterPrintedImageWithBackImageIpadSliverGold:(UIImage *)backImage
+andWaterImage:(UIImage *)waterImage;
+
 
 #pragma mark --------裁剪
 //--------------------------------------------------裁剪

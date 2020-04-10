@@ -7,7 +7,7 @@
 
 #import "YQImageTool.h"
 #import "math.h"
-
+#import "NSString+StringSize.h"
 #define PAI 3.1415926535897932384
 
 @implementation YQImageTool
@@ -124,6 +124,70 @@
     
     return newImage;
 }
++ (UIImage *)imageWithText:(NSString *)text
+                  textFont:(NSInteger)fontSize
+                 textColor:(UIColor *)textColor
+                 textFrame:(CGRect)textFrame
+               originImage:(UIImage *)image
+    imageLocationViewFrame:(CGRect)viewFrame {
+    
+    if (!text)      {  return image;   }
+    if (!fontSize)  {  fontSize = 17;   }
+    if (!textColor) {  textColor = [UIColor blackColor];   }
+    if (!image)     {  return nil;  }
+    if (viewFrame.size.height==0 || viewFrame.size.width==0 || textFrame.size.width==0 || textFrame.size.height==0 ){return nil;}
+ 
+    NSString *mark = text;
+    CGFloat height = [mark sizeWithPreferWidth:textFrame.size.width font:[UIFont systemFontOfSize:fontSize]].height; // 此分类方法要导入头文件
+    if ((height + textFrame.origin.y) > viewFrame.size.height) { // 文字高度超出父视图的宽度
+        height = viewFrame.size.height - textFrame.origin.y;
+    }
+    
+//    CGFloat w = image.size.width;
+//    CGFloat h = image.size.height;
+    UIGraphicsBeginImageContext(viewFrame.size);
+    [image drawInRect:CGRectMake(0, 0, viewFrame.size.width, viewFrame.size.height)];
+    NSDictionary *attr = @{NSFontAttributeName: [UIFont systemFontOfSize:fontSize], NSForegroundColorAttributeName : textColor };
+    //位置显示
+    [mark drawInRect:CGRectMake(textFrame.origin.x, textFrame.origin.y, textFrame.size.width, height) withAttributes:attr];
+    
+    UIImage *aimg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return aimg;
+}
+
+- (UIImage *)imageWithText:(NSString *)text
+                  textFont:(NSInteger)fontSize
+                 textColor:(UIColor *)textColor
+                 textFrame:(CGRect)textFrame
+               originImage:(UIImage *)image
+    imageLocationViewFrame:(CGRect)viewFrame {
+    
+    if (!text)      {  return image;   }
+    if (!fontSize)  {  fontSize = 17;   }
+    if (!textColor) {  textColor = [UIColor blackColor];   }
+    if (!image)     {  return nil;  }
+    if (viewFrame.size.height==0 || viewFrame.size.width==0 || textFrame.size.width==0 || textFrame.size.height==0 ){return nil;}
+ 
+    NSString *mark = text;
+    CGFloat height = [mark sizeWithPreferWidth:textFrame.size.width font:[UIFont systemFontOfSize:fontSize]].height; // 此分类方法要导入头文件
+    if ((height + textFrame.origin.y) > viewFrame.size.height) { // 文字高度超出父视图的宽度
+        height = viewFrame.size.height - textFrame.origin.y;
+    }
+    
+//    CGFloat w = image.size.width;
+//    CGFloat h = image.size.height;
+    UIGraphicsBeginImageContext(viewFrame.size);
+    [image drawInRect:CGRectMake(0, 0, viewFrame.size.width, viewFrame.size.height)];
+    NSDictionary *attr = @{NSFontAttributeName: [UIFont systemFontOfSize:fontSize], NSForegroundColorAttributeName : textColor };
+    //位置显示
+    [mark drawInRect:CGRectMake(textFrame.origin.x, textFrame.origin.y, textFrame.size.width, height) withAttributes:attr];
+    
+    UIImage *aimg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return aimg;
+}
+
 
 #pragma mark --------水印
 //--------------------------------------------------水印
@@ -144,35 +208,189 @@
                                         alpha:(CGFloat)alpha
                                    waterScale:(BOOL)waterScale
 {
+    float ws = 0.1 ;
+      float hs = 0.1452 ;
+    UIImageView *parentView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, waterImage.size.width, waterImage.size.height)];
     UIImageView *backIMGV = [[UIImageView alloc]init];
     backIMGV.backgroundColor = [UIColor clearColor];
-    backIMGV.frame = CGRectMake(0,
-                                0,
-                                backImage.size.width,
-                                backImage.size.height);
-    backIMGV.contentMode = UIViewContentModeScaleAspectFill;
+    
+    
+    
+    
+    
+    backIMGV.frame = CGRectMake(ws * waterImage.size.width,
+                                hs * waterImage.size.height,
+                                waterImage.size.width - ws * waterImage.size.width*2,
+                               waterImage.size.height - hs * waterImage.size.height*2);
+    backIMGV.contentMode = UIViewContentModeScaleToFill;
     backIMGV.image = backImage;
+    [parentView addSubview:backIMGV];
+    
+    
     
     UIImageView *waterIMGV = [[UIImageView alloc]init];
 //    waterIMGV.backgroundColor = [UIColor clearColor];
-    waterIMGV.frame = CGRectMake(waterRect.origin.x,
-                                 waterRect.origin.y,
-                                 waterRect.size.width,
-                                 waterRect.size.height);
-    if (waterScale) {
+    waterIMGV.frame = CGRectMake(0,
+                                 0,
+                                 waterImage.size.width,
+                                 waterImage.size.height);
+ 
         waterIMGV.contentMode = UIViewContentModeScaleToFill;
-    }else{
-        waterIMGV.contentMode = UIViewContentModeScaleAspectFill;
-    }
+
     waterIMGV.alpha = alpha;
     waterIMGV.image = waterImage;
     
-    [backIMGV addSubview:waterIMGV];
+    [parentView addSubview:waterIMGV];
     
-    UIImage *outImage = [self imageWithUIView:backIMGV];
+    UIImage *outImage = [self imageWithUIView:parentView];
     
     return outImage;
 }
+
++(UIImage *)GetWaterPrintedImageWithBackImageIphone11:(UIImage *)backImage
+                                andWaterImage:(UIImage *)waterImage
+                                       inRect:(CGRect)waterRect
+                                        alpha:(CGFloat)alpha
+                                   waterScale:(BOOL)waterScale
+{
+    float ws = 0.09 ;
+      float hs = 0.048 ;
+    UIImageView *parentView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, waterImage.size.width, waterImage.size.height)];
+    UIImageView *backIMGV = [[UIImageView alloc]init];
+    backIMGV.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    
+    
+    backIMGV.frame = CGRectMake(ws * waterImage.size.width,
+                                hs * waterImage.size.height,
+                                waterImage.size.width - ws * waterImage.size.width*2,
+                               waterImage.size.height - hs * waterImage.size.height*2);
+    backIMGV.contentMode = UIViewContentModeScaleToFill;
+    backIMGV.image = backImage;
+    backIMGV.layer.cornerRadius = 10 ;
+    [parentView addSubview:backIMGV];
+    
+    
+    
+    UIImageView *waterIMGV = [[UIImageView alloc]init];
+//    waterIMGV.backgroundColor = [UIColor clearColor];
+    waterIMGV.frame = CGRectMake(0,
+                                 0,
+                                 waterImage.size.width,
+                                 waterImage.size.height);
+  
+        waterIMGV.contentMode = UIViewContentModeScaleToFill;
+ 
+    waterIMGV.alpha = alpha;
+    waterIMGV.image = waterImage;
+    
+    [parentView addSubview:waterIMGV];
+    
+    UIImage *outImage = [self imageWithUIView:parentView];
+    
+    return outImage;
+}
+
+
++(UIImage *)GetWaterPrintedImageWithBackImageIphone11Pro:(UIImage *)backImage
+                                andWaterImage:(UIImage *)waterImage
+                                       inRect:(CGRect)waterRect
+                                        alpha:(CGFloat)alpha
+                                   waterScale:(BOOL)waterScale
+{
+    float ws = 0.09 ;
+         float hs = 0.046 ;
+    UIImageView *parentView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, waterImage.size.width+200, waterImage.size.height+400)];
+    parentView.image = [UIImage imageNamed:@"background.jpg"];
+    parentView.contentMode = UIViewContentModeScaleToFill;
+
+    UIImageView *backIMGV = [[UIImageView alloc]init];
+    backIMGV.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    
+    
+    backIMGV.frame = CGRectMake(300 +ws * waterImage.size.width,
+                             100+   hs * waterImage.size.height,
+                                waterImage.size.width - ws * waterImage.size.width*2,
+                               waterImage.size.height - hs * waterImage.size.height*2);
+    backIMGV.contentMode = UIViewContentModeScaleToFill;
+    backIMGV.image = backImage;
+    backIMGV.layer.cornerRadius = 10 ;
+    [parentView addSubview:backIMGV];
+    
+    
+    
+    UIImageView *waterIMGV = [[UIImageView alloc]init];
+//    waterIMGV.backgroundColor = [UIColor clearColor];
+    waterIMGV.frame = CGRectMake(300,
+                                 100,
+                                 waterImage.size.width,
+                                 waterImage.size.height);
+    
+        waterIMGV.contentMode = UIViewContentModeScaleToFill;
+   
+    waterIMGV.alpha = alpha;
+    waterIMGV.image = waterImage;
+   
+    [parentView addSubview:waterIMGV];
+    
+    UIImage *outImage = [self imageWithUIView:parentView];
+    
+    outImage = [self imageWithText:@"搜索更快wqdqdqdqwdqwd带我去多群无大青蛙大青蛙多" textFont:18 textColor:[UIColor whiteColor] textFrame:CGRectMake(50, 100, 400, 30) originImage:outImage imageLocationViewFrame:parentView.frame];
+    
+    return outImage;
+}
+//UIViewContentModeScaleToFill
+
+
++(UIImage *)GetWaterPrintedImageWithBackImageIpadSliverGold:(UIImage *)backImage
+                                andWaterImage:(UIImage *)waterImage
+                                    
+{
+    float ws = 0.080 ;
+         float hs = 0.105 ;
+    UIImageView *parentView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, waterImage.size.width, waterImage.size.height)];
+    UIImageView *backIMGV = [[UIImageView alloc]init];
+    backIMGV.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    
+    
+    backIMGV.frame = CGRectMake(ws * waterImage.size.width,
+                                hs * waterImage.size.height,
+                                waterImage.size.width - ws * waterImage.size.width*2,
+                               waterImage.size.height - hs * waterImage.size.height*2);
+    backIMGV.contentMode = UIViewContentModeScaleToFill;
+    backIMGV.image = backImage;
+//    backIMGV.layer.cornerRadius = 10 ;
+    [parentView addSubview:backIMGV];
+    
+    
+    
+    UIImageView *waterIMGV = [[UIImageView alloc]init];
+//    waterIMGV.backgroundColor = [UIColor clearColor];
+    waterIMGV.frame = CGRectMake(0,
+                                 0,
+                                 waterImage.size.width,
+                                 waterImage.size.height);
+  
+    
+    waterIMGV.image = waterImage;
+        waterIMGV.contentMode = UIViewContentModeScaleToFill;
+    [parentView addSubview:waterIMGV];
+    
+    UIImage *outImage = [self imageWithUIView:parentView];
+     outImage = [self imageWithText:@"搜索更快wqdqdqdqwdqwd带我去多群无大青蛙大青蛙多" textFont:38 textColor:[UIColor whiteColor] textFrame:CGRectMake(50, 100, 800, 100) originImage:outImage imageLocationViewFrame:parentView.frame];
+    return outImage;
+}
+
+
+
 
 
 

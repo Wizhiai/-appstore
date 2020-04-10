@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		413ED9DC0CCA3847814EBBF0 /* libPods-YQImageToolDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1D1B9392E836CC2F2661E7 /* libPods-YQImageToolDemoUITests.a */; };
+		77706A9A24403AA0008EA98E /* DevicePhoneXsSilver.png in Resources */ = {isa = PBXBuildFile; fileRef = 77706A9824403A9F008EA98E /* DevicePhoneXsSilver.png */; };
+		77706A9B24403AA0008EA98E /* iphone_11_pro_max_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 77706A9924403AA0008EA98E /* iphone_11_pro_max_gold.png */; };
+		77706AA124404CAC008EA98E /* DeviceIpadSilverGold.png in Resources */ = {isa = PBXBuildFile; fileRef = 77706AA024404CAC008EA98E /* DeviceIpadSilverGold.png */; };
+		77706AAC24407252008EA98E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77706AAB24407251008EA98E /* background.jpg */; };
+		77706AAF2440736D008EA98E /* NSString+StringSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 77706AAE2440736D008EA98E /* NSString+StringSize.m */; };
 		77DB53ED243F3A6D00378652 /* DevicePhoneSilver.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DB53EC243F3A6D00378652 /* DevicePhoneSilver.png */; };
 		77DB53EF243F3BAE00378652 /* IMG.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 77DB53EE243F3BAE00378652 /* IMG.PNG */; };
 		8360BCB5C88DF5E7489D1E1B /* libPods-YQImageToolDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D117D6CAC63C2AD08F15AFE9 /* libPods-YQImageToolDemoTests.a */; };
@@ -66,6 +71,12 @@
 		3E8D3918F6CA938D9C042BC1 /* Pods-YQImageToolDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YQImageToolDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YQImageToolDemoUITests/Pods-YQImageToolDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5F1D1B9392E836CC2F2661E7 /* libPods-YQImageToolDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YQImageToolDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		716C0EFD273DC563EAB36632 /* Pods-YQImageToolDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YQImageToolDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YQImageToolDemo/Pods-YQImageToolDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		77706A9824403A9F008EA98E /* DevicePhoneXsSilver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DevicePhoneXsSilver.png; sourceTree = "<group>"; };
+		77706A9924403AA0008EA98E /* iphone_11_pro_max_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_11_pro_max_gold.png; sourceTree = "<group>"; };
+		77706AA024404CAC008EA98E /* DeviceIpadSilverGold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeviceIpadSilverGold.png; sourceTree = "<group>"; };
+		77706AAB24407251008EA98E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		77706AAD2440736C008EA98E /* NSString+StringSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringSize.h"; sourceTree = "<group>"; };
+		77706AAE2440736D008EA98E /* NSString+StringSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringSize.m"; sourceTree = "<group>"; };
 		77DB53EC243F3A6D00378652 /* DevicePhoneSilver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DevicePhoneSilver.png; sourceTree = "<group>"; };
 		77DB53EE243F3BAE00378652 /* IMG.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG.PNG; sourceTree = "<group>"; };
 		9511837A1D5C5DC8007522D0 /* YQImageToolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YQImageToolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +243,12 @@
 		9511837D1D5C5DC9007522D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77706AAD2440736C008EA98E /* NSString+StringSize.h */,
+				77706AAE2440736D008EA98E /* NSString+StringSize.m */,
+				77706AAB24407251008EA98E /* background.jpg */,
+				77706AA024404CAC008EA98E /* DeviceIpadSilverGold.png */,
+				77706A9824403A9F008EA98E /* DevicePhoneXsSilver.png */,
+				77706A9924403AA0008EA98E /* iphone_11_pro_max_gold.png */,
 				77DB53EE243F3BAE00378652 /* IMG.PNG */,
 				77DB53EC243F3A6D00378652 /* DevicePhoneSilver.png */,
 				9552F6881D5C67270033493D /* mask.png */,
@@ -407,11 +424,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DB53ED243F3A6D00378652 /* DevicePhoneSilver.png in Resources */,
+				77706A9A24403AA0008EA98E /* DevicePhoneXsSilver.png in Resources */,
 				9511838D1D5C5DC9007522D0 /* LaunchScreen.storyboard in Resources */,
 				9511838A1D5C5DC9007522D0 /* Assets.xcassets in Resources */,
 				951183881D5C5DC9007522D0 /* Main.storyboard in Resources */,
 				9552F6871D5C66990033493D /* test1.jpg in Resources */,
 				77DB53EF243F3BAE00378652 /* IMG.PNG in Resources */,
+				77706AA124404CAC008EA98E /* DeviceIpadSilverGold.png in Resources */,
+				77706A9B24403AA0008EA98E /* iphone_11_pro_max_gold.png in Resources */,
+				77706AAC24407252008EA98E /* background.jpg in Resources */,
 				9552F6831D5C65BE0033493D /* test.png in Resources */,
 				9552F6891D5C67270033493D /* mask.png in Resources */,
 			);
@@ -506,6 +527,7 @@
 				9552F6761D5C5EA40033493D /* BackImageDemo.m in Sources */,
 				951183821D5C5DC9007522D0 /* AppDelegate.m in Sources */,
 				9552F69B1D5C6FD70033493D /* MaskVC.m in Sources */,
+				77706AAF2440736D008EA98E /* NSString+StringSize.m in Sources */,
 				9552F6651D5C5E840033493D /* OnlyCompressDataDemo.m in Sources */,
 				9552F6A41D5C772F0033493D /* RotationVC.m in Sources */,
 				9552F6661D5C5E840033493D /* OnlyCompressImageDemo.m in Sources */,
